@@ -1,0 +1,19 @@
+# Welcome to the text based game
+class Room: # Class to represent a room in the game
+    def __init__(self, name, item, enemy):
+        self.name, self.item, self.enemy = name, item, enemy
+        
+#Definig the global variables
+player_hp, inventory = 100, []
+
+#Definig the ga functions
+def ga(room): print(f"You're in {room.name}. Items: {room.item}. Enemy: {room.enemy}.")
+# Definign the take and fight functions
+def take(item): inventory.append(item); print(f"Taken {item}.")
+def fight(enemy): global player_hp; print(f"Fighting {enemy}!"); player_hp -= 10; print(f"Player HP: {player_hp}")
+
+# Example usage
+room1 = Room("Entrance Hall", "Sword", "Goblin")
+ga(room1)
+take("Sword")
+fight("Goblin")
